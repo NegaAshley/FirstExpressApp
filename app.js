@@ -22,6 +22,13 @@ app.get("/dog", function(request, response){
     response.send("MEOW!"); 
 });
 
+//Subreddit example
+//Response pattern used
+app.get("/r/:subredditName", function(request, response){
+    console.log("Someone made a request to go to a subreddit!");
+    response.send("WELCOME TO A SUBREDDIT!");
+});
+
 // Undefined request
 // The order of routes matters.
 // The first route that matches a request is the only one that is run.
