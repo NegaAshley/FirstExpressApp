@@ -22,6 +22,15 @@ app.get("/dog", function(request, response){
     response.send("MEOW!"); 
 });
 
+// Undefined request
+// The order of routes matters.
+// The first route that matches a request is the only one that is run.
+// "*" => "You are a star!!"
+app.get("*", function(request, response){
+    console.log("Someone made a different request!");
+    response.send("You are a star!");
+});
+
 //Tell Express to listen for requests (start server)
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server has started!");
