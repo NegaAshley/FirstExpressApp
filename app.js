@@ -25,8 +25,9 @@ app.get("/dog", function(request, response){
 //Subreddit example
 //Response pattern used
 app.get("/r/:subredditName", function(request, response){
-    console.log("Someone made a request to go to a subreddit!");
-    response.send("WELCOME TO A SUBREDDIT!");
+    var subreddit = request.params.subredditName;
+    console.log("Someone made a request to go to the " + subreddit + " subreddit!");
+    response.send("WELCOME TO THE " + subreddit.toUpperCase() + " SUBREDDIT!");
 });
 
 app.get("/r/:subredditName/comments/:id/:title/", function(request, response){
